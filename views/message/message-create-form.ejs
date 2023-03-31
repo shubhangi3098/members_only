@@ -1,0 +1,14 @@
+<h1><%= title %></h1>
+<form class="form" method="POST">
+  <div class="form-group">
+    <label for="title">Title:</label>
+    <input id="title" name="title" type="text" placeholder="enter message title" required="true" value="<%= message===undefined ? '' : message.title %>">
+  </div>
+  <div class="form-group">
+    <label for="content">Content:</label>
+    <input id="content" name="content" type="content" placeholder="enter your content" required="true">
+  </div>
+  <button class="submit-button" type="submit"><%= title %></button>
+</form>
+
+<%- include("../errors", { errors }); %>

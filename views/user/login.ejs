@@ -1,0 +1,5 @@
+<% if (currentUser) { %>
+    <%- include("../logged-in"); %>
+    <% } else { %>
+    <%- include("./login-form", {user, errors}); %>
+    <% } %>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %> | Members Only</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+
+<body>
+  <main id="main">
+    <nav id="nav">
+      <h2>Members Only</h2>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/user/login">Login</a></li>
+        <li><a href="/user/register">Register</a></li>
+        <% if (currentUser) { %>
+        <li><b><a href="/message/create">Write a message!</a></b></li>
+        <% } %>
+      </ul>
+    </nav>
+    <hr>
+    <section id="route-section">
+      <%- include(content, {title, ...props}); %>
+    </section>
+    <section id="user-section">
+      <% if (currentUser) { %>
+      <b><p><%= currentUser.fullName %> — <a href="/user/logout">Log out</a></p></b>
+      <% } else { %>
+      <b><p>Not logged in</p></b>
+      <% } %>
+    </section>
+  </main>
+</body>
+
+</html>

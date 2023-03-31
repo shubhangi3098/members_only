@@ -1,0 +1,5 @@
+<% if (currentUser) { %>
+    <%- include('./message-create-form', { message, errors }) %>
+    <% } else { %>
+    <%- include('../not-logged-in') %>
+    <% } %>

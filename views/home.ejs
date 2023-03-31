@@ -1,0 +1,7 @@
+<h1>Welcome to Members Only!</h1>
+<h3 style="padding-top: 20px;">Messages</h3>
+<div id="messages">
+  <% for (let i in messages) { %>
+  <%- include('components/message', {message: messages[i]}) %>
+  <% } %>
+</div>

@@ -1,0 +1,22 @@
+<div class="message">
+    <div class="message-top">
+      <p class="message-author">
+        <% if (currentUser && (currentUser.isAdmin || currentUser.isMember && message.author.isMember)) { %>
+        <%= message.author.fullName %>
+        <% } else { %>
+        Anonymous
+        <% } %>
+      </p>
+      posted
+      <p class="message-title">"<%= message.title %>"</p>
+      <% if (currentUser && (currentUser.isAdmin || currentUser.isMember && message.author.isMember)) { %>
+      <p class="message-time">
+        at <%= message.timestamp.toLocaleString() %>
+      </p>
+      <% } %>
+    </div>
+    <p class="message-content"><%= message.content %></p>
+    <% if (currentUser && currentUser.isAdmin) { %>
+    <a href="/message/<%= message._id %>/delete">Delete Message</a>
+    <% } %>
+  </div>
